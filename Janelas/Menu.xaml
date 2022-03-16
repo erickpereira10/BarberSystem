@@ -1,0 +1,126 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        xmlns:local="clr-namespace:BarberSystem.Janelas"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="BarberSystem.Janelas.Menu"
+        mc:Ignorable="d"
+        Title="Menu" Height="740" Width="1366" UseLayoutRounding="False" Loaded="Window_Loaded" Icon="/BarberSystem;component/imagens/icone.png" WindowStartupLocation="CenterScreen">
+	<Window.Background>
+		<ImageBrush ImageSource="/BarberSystem;component/imagens/imgMenu.jpg"/>
+	</Window.Background>
+	<Grid>
+		<Menu x:Name="menu" Height="20" Width="1366" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="#FF191919" Foreground="#FFFBF9F9" BorderBrush="#FF191919">
+			<MenuItem x:Name="btnAutoUpdate" Header="Arquivo" Foreground="#FFFBF7F7" Background="#FF191919" BorderBrush="#FF191919" UseLayoutRounding="False" BorderThickness="1">
+				<MenuItem Header="Agenda" Click="MenuItem_Click_1" Background="#FF191919" BorderBrush="#FF474747"/>
+				<MenuItem x:Name="btnUsuariosMenu" Header="Usuários" Click="MenuItem_Click_2" Background="#FF191919" BorderBrush="#FF474747"/>
+				<MenuItem Header="Clientes" Click="MenuItem_Click_3" Background="#FF191919" BorderBrush="#FF474747"/>
+				<MenuItem Header="Fornecedores" Click="MenuItem_Click_7" Background="#FF191919" BorderBrush="#FF474747"/>
+				<MenuItem x:Name="btnFuncionariosMenu" Header="Funcionários" Click="MenuItem_Click_8" Background="#FF191919" BorderBrush="#FF474747"/>
+				<MenuItem Header="Barbeiros" Click="MenuItem_Click_4" Background="#FF191919" BorderBrush="#FF474747"/>
+				<MenuItem Header="Produtos" Background="#FF191919" BorderBrush="#FF474747" Click="MenuItem_Click_9"/>
+				<MenuItem Header="Estoque" Background="#FF191919" BorderBrush="#FF474747" Click="MenuItem_Click_10"/>
+				<Separator/>
+				<MenuItem x:Name="relatoriosMenuItem" Header="Relatórios" Background="#FF191919" BorderBrush="#FF474747" Click="relatoriosMenuItem_Click"/>
+			</MenuItem>
+			<MenuItem Header="Financeiro" Foreground="#FFFDF9F9">
+				<MenuItem x:Name="btnPagarMenu" Header="Contas a Pagar" Click="MenuItem_Click_5" Background="#FF191919" Foreground="#FFFDFBFB" BorderBrush="#FF474747"/>
+				<MenuItem x:Name="btnReceberMenu" Header="Contas a Receber" Click="MenuItem_Click_6" Background="#FF191919" Foreground="#FFFDF9F9" BorderBrush="#FF474747"/>
+				<MenuItem x:Name="btnCaixaMenu" Header="Caixa" Background="#FF191919" Foreground="#FFFDF9F9" BorderBrush="#FF474747" Click="MenuItem_Click_12"/>
+			</MenuItem>
+			<MenuItem Header="Sobre" Click="MenuItem_Click_11"/>
+			<MenuItem Header="Sair" Click="MenuItem_Click"/>
+			<MenuItem Header="Logout" Margin="1100,0,0,0" Padding="6,0" Click="MenuItem_Click_13"/>
+		</Menu>
+		<ToolBar x:Name="toolBar" HorizontalAlignment="Left" Height="97" Margin="-2,20,0,0" VerticalAlignment="Top" Width="1364" Background="#FF191919" BorderBrush="#FFF7F5F5" BorderThickness="1" UseLayoutRounding="False">
+			<Button x:Name="btnAgenda" Content="Agenda" Style="{StaticResource MyButtonMenu}" Height="78" Margin="0,9,0,3" Width="120" Foreground="#FFFBFBFB" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Click="btnAgenda_Click" Cursor="Hand" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconAgenda.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnClientes" Content="Clientes" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnClientes_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconClientes.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnFornecedores" Content="Fornecedores" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFF9F7F7" VerticalAlignment="Center" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnFornecedores_Click">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconFornecedores.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnProdutos" Content="Produtos" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnProdutos_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconProdutos.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnEstoque" Content="Estoque" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnEstoque_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconEstoque.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnPagar" Content="Contas a Pagar" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="BtnPagar_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconPagar.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnReceber" Content="Contas a Receber" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnReceber_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconReceber.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnCaixa" Content="Caixa" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="BtnCaixa_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconCaixa.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnFuncionarios" Content="Funcionários" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnFuncionarios_Click">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconFuncionarios.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnBarbeiros" Content="Barbeiros" Style="{StaticResource MyButtonMenu}" Height="77" Margin="0,10,0,5" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnBarbeiros_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconBarbeiros.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="btnConfig" Content="Config. Usuários" Style="{StaticResource MyButtonMenu}" Height="78" Margin="0,9,0,3" Width="120" Foreground="#FFFBF9F9" VerticalContentAlignment="Bottom" Cursor="Hand" Click="btnConfig_Click" VerticalAlignment="Center">
+				<Button.Background>
+					<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoes/iconConfig.png" Stretch="Uniform"/>
+				</Button.Background>
+			</Button>
+		</ToolBar>
+		<Calendar x:Name="calendario" Style="{StaticResource TouchCalendarStyle}" HorizontalAlignment="Left" Margin="19,133,0,0" VerticalAlignment="Top" Height="279" Width="283" BorderBrush="{x:Null}" Foreground="#FFFB0202" Background="#FF191919" FontSize="16" FontWeight="SemiBold" TextOptions.TextFormattingMode="Display" Cursor="Arrow" SelectedDatesChanged="calendario_SelectedDatesChanged"/>
+		<StatusBar HorizontalAlignment="Left" Height="28" Margin="0,679,-8,0" VerticalAlignment="Top" Width="1366" Background="{x:Null}" BorderBrush="#FFFBF5F5">
+			<Label x:Name="sbData" Content="Data:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="9" FontWeight="SemiBold" Foreground="#FFF9F9F9"/>
+			<Separator/>
+			<Label x:Name="sbUsuario" Content="Usuário:" FontSize="9" FontWeight="SemiBold" Foreground="#FFF9F9F9"/>
+			<Separator/>
+			<Label Content="Bem vindo ao sistema!" FontSize="9" FontWeight="SemiBold" Foreground="#FFF9F9F9"/>
+		</StatusBar>
+		<DataGrid x:Name="dgAgenda" HorizontalAlignment="Left" Height="535" Margin="307,135,0,0" VerticalAlignment="Top" Width="1018" Background="{x:Null}" BorderBrush="{x:Null}" AutoGenerateColumns="False" FontWeight="SemiBold" Focusable="False" Foreground="#FF040404">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding cliente}"  Foreground="#FFFDF8F8" Header="Cliente" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" Width="180"/>
+				<DataGridTextColumn Binding="{Binding descricao}"  Foreground="#FFFDF8F8" Header="Descrição" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" Width="290"/>
+				<DataGridTextColumn Binding="{Binding hora_inicio, StringFormat=HH:mm}"  Foreground="#FFF9F9F9" Header="Hora de inicio" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" Width="100"/>
+				<DataGridTextColumn Binding="{Binding hora_fim, StringFormat=HH:mm}"  Foreground="#FFF9F7F7" Header="Hora final" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" Width="100"/>
+				<DataGridTextColumn Binding="{Binding data, ConverterCulture=pt-BR, StringFormat=\{0:d\}}"  Foreground="#FFFDFBFB" Header="Data" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" Width="100"/>
+				<DataGridTextColumn Binding="{Binding nome_barbeiro}"  Foreground="#FFFBF9F9" Header="Barbeiro" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" CanUserResize="False" Width="160"/>
+				<DataGridTextColumn Binding="{Binding valor}"  Foreground="#FFFBF9F9" Header="Valor" IsReadOnly="True" FontWeight="SemiBold" FontSize="11" CanUserResize="False" Width="90"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Button x:Name="btnNavegador" Style="{StaticResource ButtonMenu}" Content="" HorizontalAlignment="Left" Margin="66,596,0,0" VerticalAlignment="Top" Width="64" Click="btnTeste_Click" Height="60">
+			<Button.Background>
+				<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoesJanelas/Navegador.png" Stretch="Uniform"/>
+			</Button.Background>
+		</Button>
+		<Button x:Name="btnOutlook" Style="{StaticResource ResourceKey=ButtonMenu}" Content="" HorizontalAlignment="Left" Margin="179,596,0,0" VerticalAlignment="Top" Width="65" Height="60" Click="btnOutlook_Click">
+			<Button.Background>
+				<ImageBrush ImageSource="/BarberSystem;component/imagens/imgBotoesJanelas/Outlook.png" Stretch="Uniform"/>
+			</Button.Background>
+		</Button>
+		<Image x:Name="image" HorizontalAlignment="Left" Height="122" Margin="113,447,0,0" VerticalAlignment="Top" Width="90" gif:AnimationBehavior.SourceUri="/BarberSystem;component/Gifs/barberPole.gif" Opacity="0.85"/>
+
+	</Grid>
+</Window>
